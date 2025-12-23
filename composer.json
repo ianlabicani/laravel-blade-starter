@@ -1,11 +1,16 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "laravel/laravel",
+    "name": "ianlabicani/laravel-blade-starter",
     "type": "project",
-    "description": "The skeleton application for the Laravel framework.",
+    "description": "A Laravel Breeze starter template with RBAC-ready structure, role-based dashboards, and authentication scaffolding for quick project setup.",
     "keywords": [
         "laravel",
-        "framework"
+        "framework",
+        "breeze",
+        "rbac",
+        "starter-template",
+        "authentication",
+        "role-based-access-control"
     ],
     "license": "MIT",
     "require": {

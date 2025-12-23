@@ -1,59 +1,229 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Laravel Blade Starter Template
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A clean and minimal Laravel starter template with **Laravel Breeze** authentication and **RBAC-ready structure** for building role-based applications quickly. Perfect for projects that need user authentication, role management, and separate dashboards right out of the box.
 
-## About Laravel
+## Features
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+-   ✨ **Laravel 12** - Latest Laravel framework
+-   🔐 **Laravel Breeze** - Simple authentication scaffolding
+-   👥 **RBAC Structure** - Role-based access control ready
+-   🎨 **Tailwind CSS** - Modern utility-first CSS framework
+-   🚀 **Role-Based Dashboards** - Separate dashboards for Super Admin, Admin, and users
+-   📱 **Responsive Design** - Mobile-friendly layouts
+-   🎯 **Font Awesome Icons** - Beautiful icons throughout
+-   🎭 **No-Role Page** - Dedicated page for users without assigned roles
+-   🧪 **Pest Testing** - Modern PHP testing framework
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Requirements
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+-   PHP >= 8.2
+-   Composer
+-   Node.js & NPM
+-   MySQL or any supported database
 
-## Learning Laravel
+## Installation
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+### Creating a New Project from This Template
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+You can create a new project using Composer's `create-project` command:
 
-## Laravel Sponsors
+```bash
+composer create-project ianlabicani/laravel-blade-starter your-project-name
+```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### Manual Installation
 
-### Premium Partners
+1. Clone the repository:
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+```bash
+git clone https://github.com/ianlabicani/laravel-blade-starter.git your-project-name
+cd your-project-name
+```
 
-## Contributing
+2. Run the setup script:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```bash
+composer run setup
+```
 
-## Code of Conduct
+This will automatically:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+-   Install PHP dependencies
+-   Copy `.env.example` to `.env`
+-   Generate application key
+-   Run database migrations
+-   Install NPM dependencies
+-   Build frontend assets
 
-## Security Vulnerabilities
+3. Configure your `.env` file with your database credentials:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=your_database_name
+DB_USERNAME=your_username
+DB_PASSWORD=your_password
+```
+
+4. Run migrations to create database tables:
+
+```bash
+php artisan migrate
+```
+
+5. (Optional) Seed the database with sample data:
+
+```bash
+php artisan db:seed
+```
+
+## Available Scripts
+
+This template includes several useful Composer scripts to streamline your development workflow:
+
+### Setup Script
+
+```bash
+composer run setup
+```
+
+Sets up the entire project from scratch:
+
+-   Installs all PHP dependencies
+-   Creates `.env` file from example
+-   Generates application key
+-   Runs database migrations
+-   Installs Node.js dependencies
+-   Builds frontend assets
+
+### Development Script
+
+```bash
+composer run dev
+```
+
+Starts all development services concurrently:
+
+-   Laravel development server (`php artisan serve`)
+-   Queue worker (`php artisan queue:listen`)
+-   Vite dev server (`npm run dev`)
+
+This uses `concurrently` to run all three services in one terminal window with color-coded output.
+
+### Test Script
+
+```bash
+composer run test
+```
+
+Runs the test suite:
+
+-   Clears configuration cache
+-   Executes all Pest tests
+
+## Project Structure
+
+### Authentication Views
+
+All authentication views are located in `resources/views/auth/`:
+
+-   `login.blade.php` - User login
+-   `register.blade.php` - User registration
+-   `forgot-password.blade.php` - Password reset request
+-   `reset-password.blade.php` - Password reset form
+-   `verify-email.blade.php` - Email verification
+-   `confirm-password.blade.php` - Password confirmation
+
+### Layout Templates
+
+-   `resources/views/public/layout.blade.php` - Public pages layout
+-   `resources/views/admin/layout.blade.php` - Admin dashboard layout
+-   `resources/views/super-admin/layout.blade.php` - Super Admin dashboard layout
+
+### Role-Based Routing
+
+-   `routes/web.php` - Public and dashboard routes
+-   `routes/auth.php` - Authentication routes
+-   `routes/admin.php` - Admin-only routes
+-   `routes/super-admin.php` - Super Admin-only routes
+
+### Models
+
+-   `app/Models/User.php` - User model with role relationships
+-   `app/Models/Role.php` - Role model
+
+## Usage
+
+### Running the Application
+
+Start the development server:
+
+```bash
+composer run dev
+```
+
+Or manually start services:
+
+```bash
+# Terminal 1: Laravel Server
+php artisan serve
+
+# Terminal 2: Queue Worker
+php artisan queue:listen
+
+# Terminal 3: Vite Dev Server
+npm run dev
+```
+
+Visit `http://localhost:8000` in your browser.
+
+### Role Management
+
+Users can have roles assigned through the `role_user` pivot table. The dashboard automatically redirects users based on their role:
+
+-   **Super Admin** → Super Admin Dashboard
+-   **Admin** → Admin Dashboard
+-   **No Role** → No-Role Page (informational page)
+
+### Customization
+
+1. **Update branding**: Modify the app name in `resources/views/public/layout.blade.php`
+2. **Customize colors**: Edit Tailwind classes throughout the views
+3. **Add new roles**: Create migrations and update the Role model
+4. **Extend dashboards**: Add new routes and views in respective role folders
+
+## Testing
+
+Run the test suite:
+
+```bash
+composer run test
+```
+
+Or use Pest directly:
+
+```bash
+./vendor/bin/pest
+```
+
+## Built With
+
+-   [Laravel 12](https://laravel.com) - PHP Framework
+-   [Laravel Breeze](https://laravel.com/docs/starter-kits#breeze) - Authentication Scaffolding
+-   [Tailwind CSS](https://tailwindcss.com) - CSS Framework
+-   [Font Awesome](https://fontawesome.com) - Icon Library
+-   [Vite](https://vitejs.dev) - Frontend Build Tool
+-   [Pest](https://pestphp.com) - Testing Framework
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+This project is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## Credits
+
+Created by [Ian Labicani](https://github.com/ianlabicani)
