@@ -92,11 +92,5 @@
         }
     },
     "minimum-stability": "stable",
-    "prefer-stable": true,
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/ianlabicani/laravel-blade-starter.git"
-        }
-    ]
+    "prefer-stable": true
 }
