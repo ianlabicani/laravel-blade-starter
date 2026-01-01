@@ -207,6 +207,42 @@ Or use Pest directly:
 ./vendor/bin/pest
 ```
 
+## AI-Assisted Development
+
+This project includes comprehensive AI coding assistance to help you develop faster and more efficiently.
+
+### Copilot Instructions
+
+Custom GitHub Copilot instructions are provided in `.github/copilot-instructions.md` to ensure AI suggestions follow the project's patterns and best practices. These instructions cover:
+
+-   Project structure and architecture conventions
+-   RBAC patterns and role management
+-   Controller and view naming conventions
+-   Route organization guidelines
+-   Testing patterns with Pest
+-   Tailwind CSS usage conventions
+
+The instructions help AI assistants understand the project context and provide more accurate suggestions aligned with Laravel 12 and this starter's structure.
+
+### Laravel Boost MCP
+
+For the best development experience, use [Laravel Boost](https://laravel.com/docs/boost) - a Model Context Protocol (MCP) server designed specifically for Laravel applications. Laravel Boost provides:
+
+-   **Smart Documentation Search** - Version-specific Laravel documentation for your packages
+-   **Artisan Command Integration** - Direct access to Artisan commands
+-   **Tinker Integration** - Execute PHP code and query Eloquent models directly
+-   **Database Querying** - Read from database without writing PHP
+-   **Browser Log Reading** - Debug frontend issues easily
+-   **Absolute URL Generation** - Get correct project URLs automatically
+
+#### Installing Laravel Boost
+
+```bash
+php artisan boost:install
+```
+
+Once installed, Laravel Boost integrates with VS Code's GitHub Copilot and other AI assistants to provide context-aware development support.
+
 ## Built With
 
 -   [Laravel 12](https://laravel.com) - PHP Framework
